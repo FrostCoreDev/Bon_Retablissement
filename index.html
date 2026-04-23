@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bon Rétablissement</title>
+
+<style>
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    width: 90%;
+    margin: 20px auto;
+    border: 3px solid black;
+    border-radius: 40px;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.4em;
+}
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.rotate {
+    width: 120px;
+    height: 120px;
+    border: 3px solid black;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.slider {
+    width: 120px;
+    height: 120px;
+    border: 3px solid black;
+    object-fit: cover;
+}
+
+.bottom {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid black;
+    min-height: 400px;
+}
+
+.ad {
+    border-bottom: 3px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+.card img {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .bottom {
+        flex-direction: column;
+    }
+
+    .card {
+        min-height: 250px;
+    }
+
+    .top {
+        flex-direction: column;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="header"><b>
+    🌹
+    </br>
+    BON RÉTABLISSEMENT™
+    </br>
+    Nous vous pensons fort, Bibou 67.
+</div></b>
+
+<div class="top">
+    <img src="https://tse3.mm.bing.net/th/id/OIP.r44XEjLGEbaWTUJE64JhJAHaHS?w=1070&h=1053&rs=1&pid=ImgDetMain&o=7&rm=3" class="rotate" alt="Tacos cat">
+
+    <img id="slider" class="slider" alt="Noah le crook"
+         src="https://tse2.mm.bing.net/th/id/OIP.vF4cDNNS3E80QPPLtvMhFgHaHS?rs=1&pid=ImgDetMain&o=7&rm=3">
+</div>
+
+<div class="bottom">
+
+    <div class="card">
+        <div class="ad"><b>Publicité:</br>“Oreiller Anti-Grippe Intelligent™” </br><i>Tu éternues ? Il te console.</i></b></div>
+        <img src="https://tse2.mm.bing.net/th/id/OIP.h13RWbcot5lBRFmw57TpxgHaJy?rs=1&pid=ImgDetMain&o=7&rm=3">
+    </div>
+
+    <div class="card">
+        <div class="ad"><b>Publicité:<br> “Inquiete que vos eleves sont en retart sur les séances ?” <br> <i>Aucune inquiétude: votre progression a été automatiquement mise en pause.</i></b></div>
+        <img src="https://img.freepik.com/vecteurs-premium/ruee-vers-enfants-ecole-retard-pour-cours_160308-5676.jpg?w=1380">
+    </div>
+
+    <div class="card">
+        <div class="ad"><b>Publicité:<br> “Guérison Express 3000” <br> <i>Clique sur un bouton et attends.</i></b></div>
+        <img src="https://tse1.explicit.bing.net/th/id/OIP.r19LeKs7jKYwCBIKUXSVhQHaGI?rs=1&pid=ImgDetMain&o=7&rm=3">
+    </div>
+
+</div>
+
+<script>
+const images = [
+    "https://tse2.mm.bing.net/th/id/OIP.vF4cDNNS3E80QPPLtvMhFgHaHS?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://tse1.mm.bing.net/th/id/OIP.QCqzXOXNj2Cu-H8nAceVUgHaFk?rs=1&pid=ImgDetMain&o=7&rm=3",
+    "https://static.actu.fr/uploads/2025/01/a86c358be81764d6c358be817817c3v.jpeg"
+];
+
+let i = 0;
+
+setInterval(() => {
+    i = (i + 1) % images.length;
+    document.getElementById("slider").src = images[i];
+}, 3000); // plus propre que 100ms
+</script>
+</body>
+
+</html>
